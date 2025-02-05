@@ -98,22 +98,22 @@ const Index = () => {
     value: reviews,
   });
 
-  useCopilotAction({
-    name: "Print",
-    description: "Print on console",
-    parameters: [
-      {
-        name: "abc",
-        type: "string",
-        description: "to print on console",
-        required: true,
-      },
-    ],
-    handler: ({ abc }) => {
-      testing(abc);
-      return "Movie was found!";
-    },
-  });
+  // useCopilotAction({
+  //   name: "Print",
+  //   description: "Print on console",
+  //   parameters: [
+  //     {
+  //       name: "abc",
+  //       type: "string",
+  //       description: "to print on console",
+  //       required: true,
+  //     },
+  //   ],
+  //   handler: ({ abc }) => {
+  //     testing(abc);
+  //     return "Movie was found!";
+  //   },
+  // });
 
   useCopilotAction({
     name: "searchMovie",

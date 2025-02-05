@@ -37,6 +37,8 @@ const MovieDetails = ({ movie, onBack, reviews, setReviews }) => {
   };
 
   const handleSubmitReview = () => {
+    console.log("Submitting review...");
+
     if (droppedStars.length > 0) {
       const reviewDetails = {
         rating: droppedStars.length,
@@ -67,8 +69,30 @@ const MovieDetails = ({ movie, onBack, reviews, setReviews }) => {
   useCopilotAction({
     name: "movieReview",
     description: "Write a review for the movie",
-    handler: () => {
-      handleSubmitReview();
+    parameters: [
+      {
+        name: "star",
+        type: "number",
+        description: "Rating of the movie",
+        required: true,
+      },
+      {
+        name: "reviewText",
+        type: "string",
+        description: "Text review of the movie",
+        required: false,
+      },
+    ],
+    handler: ({ star, reviewText }) => {
+      const reviewDetails = {
+        rating: star,
+        reviewText: reviewText || "No written review provided.",
+      };
+      setReviews((prevReviews) => ({
+        ...prevReviews,
+        [movie.imdbID]: reviewDetails,
+      }));
+      setReviewDetailsVisible(true);
     },
   });
 
