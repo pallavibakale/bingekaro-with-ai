@@ -14,7 +14,7 @@ const Header = ({ onSearch }) => {
   return (
     <header>
       <a href="/">
-        <img alt="Binge Karo" src="/assets/logo.jpg" />
+        <img alt="Binge Karo" src="/src/assets/logo.jpg" />
       </a>
       <form onSubmit={handleSearch} className="search_form">
         <input

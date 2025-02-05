@@ -4,7 +4,7 @@ import "./css/global.css";
 import Header from "./components/header";
 import MovieCard from "./components/movieCard";
 import MovieDetails from "./components/movieDetails"; // Import the MovieDetail component
-
+import "@copilotkit/react-ui/styles.css";
 import { useCopilotAction, useCopilotReadable } from "@copilotkit/react-core";
 
 const Index = () => {
@@ -82,26 +82,29 @@ const Index = () => {
   const handlePreviousPage = () => {
     setPage((prevPage) => (prevPage > 1 ? prevPage - 1 : 1)); // Decrement the page number, ensuring it doesn't go below 1
   };
+
   useCopilotReadable({
-    description: "This is a set of movies",
-    value: JSON.stringify(movies),
+    name: "Movies",
+    description: "List of movies",
+    value: movies,
   });
-  useCopilotAction({
-    name: "Search movie",
-    description: "Search for any movie",
-    parameters: [
-      {
-        name: "title",
-        type: "string",
-        description: "name of the movie to be searched",
-        required: true,
-      },
-    ],
-    handler: ({ title }) => {
-      fetchMovies(title);
-      return "Movie was found!";
-    },
-  });
+
+  // useCopilotAction({
+  //   name: "Search movie",
+  //   description: "Search for any movie",
+  //   parameters: [
+  //     {
+  //       name: "title",
+  //       type: "string",
+  //       description: "name of the movie to be searched",
+  //       required: true,
+  //     },
+  //   ],
+  //   handler: ({ title }) => {
+  //     fetchMovies(title);
+  //     return "Movie was found!";
+  //   },
+  // });
   return (
     <>
       <Header onSearch={fetchMovies} />

@@ -12,12 +12,18 @@ createRoot(document.getElementById("root")).render(
       publicApiKey="ck_pub_2dd697c66097f0e76b9584b861082d7e"
     >
       <App />
-      <CopilotPopup
-        labels={{
-          title: "Ask BingingPro AI",
-          initial: "How may I help you?",
+      <div
+        style={{
+          "--copilot-kit-primary-color": "#222",
         }}
-      />
+      >
+        <CopilotPopup
+          labels={{
+            title: "Ask BingingPro AI",
+            initial: "How may I help you?",
+          }}
+        />
+      </div>
     </CopilotKit>
   </StrictMode>
 );
