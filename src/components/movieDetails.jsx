@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./../css/movieDetail.css"; // Include your CSS file
+import { useCopilotAction, useCopilotReadable } from "@copilotkit/react-core";
 
 const MovieDetails = ({ movie, onBack, reviews, setReviews }) => {
   const [rating, setRating] = useState(0);
@@ -50,6 +51,26 @@ const MovieDetails = ({ movie, onBack, reviews, setReviews }) => {
       alert("Please drag and drop stars to rate before submitting.");
     }
   };
+
+  useCopilotReadable({
+    name: "reviewText",
+    description: "Text review of each movie",
+    value: reviewText,
+  });
+
+  useCopilotReadable({
+    name: "rating",
+    description: "Rating of each movie",
+    value: rating,
+  });
+
+  useCopilotAction({
+    name: "movieReview",
+    description: "Write a review for the movie",
+    handler: () => {
+      handleSubmitReview();
+    },
+  });
 
   const clearReview = () => {
     setRating(0);

@@ -92,6 +92,12 @@ const Index = () => {
     value: movies,
   });
 
+  useCopilotReadable({
+    name: "Reviews of movies",
+    description: "List of movie reviews",
+    value: reviews,
+  });
+
   useCopilotAction({
     name: "Print",
     description: "Print on console",
