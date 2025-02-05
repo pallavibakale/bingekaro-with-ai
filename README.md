@@ -1,9 +1,5 @@
 # Bingekaro with AI
 
-Here’s the rephrased version to include in the **README.md**:
-
----
-
 **Bingekaro with AI** is a React-based web application built with Vite and integrated with CopilotKit for AI-powered interactions. It leverages the **OMDB API** to fetch and display movie details. Users can rate movies using a star-based system and write reviews. With AI integration, users can seamlessly interact with the platform, allowing them to search for movies, submit ratings, and write reviews using AI-powered assistance.
 
 ## 🚀 Project Setup
