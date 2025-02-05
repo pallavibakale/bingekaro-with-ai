@@ -39,6 +39,9 @@ const Index = () => {
         setLoading(false);
       });
   };
+  const testing = (abc) => {
+    console.log(abc);
+  };
 
   const handleMovieClick = (movie) => {
     fetch(`${api}&i=${movie.imdbID}&plot=full`)
@@ -89,22 +92,40 @@ const Index = () => {
     value: movies,
   });
 
-  // useCopilotAction({
-  //   name: "Search movie",
-  //   description: "Search for any movie",
-  //   parameters: [
-  //     {
-  //       name: "title",
-  //       type: "string",
-  //       description: "name of the movie to be searched",
-  //       required: true,
-  //     },
-  //   ],
-  //   handler: ({ title }) => {
-  //     fetchMovies(title);
-  //     return "Movie was found!";
-  //   },
-  // });
+  useCopilotAction({
+    name: "Print",
+    description: "Print on console",
+    parameters: [
+      {
+        name: "abc",
+        type: "string",
+        description: "to print on console",
+        required: true,
+      },
+    ],
+    handler: ({ abc }) => {
+      testing(abc);
+      return "Movie was found!";
+    },
+  });
+
+  useCopilotAction({
+    name: "searchMovie",
+    description: "Search for any movie",
+    parameters: [
+      {
+        name: "searchInput",
+        type: "string",
+        description: "name of the movie to be searched",
+        required: true,
+      },
+    ],
+    handler: ({ searchInput }) => {
+      fetchMovies(searchInput);
+      return "Movie was found!";
+    },
+  });
+
   return (
     <>
       <Header onSearch={fetchMovies} />
