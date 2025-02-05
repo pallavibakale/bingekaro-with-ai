@@ -1,5 +1,3 @@
-# React + Vite
-
 # Bingekaro with AI
 
 Here’s the rephrased version to include in the **README.md**:
