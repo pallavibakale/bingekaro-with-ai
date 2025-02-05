@@ -1,11 +1,52 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Bingekaro with AI
 
-Currently, two official plugins are available:
+Here’s the rephrased version to include in the **README.md**:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+**Bingekaro with AI** is a React-based web application built with Vite and integrated with CopilotKit for AI-powered interactions. It leverages the **OMDB API** to fetch and display movie details. Users can rate movies using a star-based system and write reviews. With AI integration, users can seamlessly interact with the platform, allowing them to search for movies, submit ratings, and write reviews using AI-powered assistance.
+
+## 🚀 Project Setup
+
+### **Prerequisites**
+
+Make sure you have the following installed:
+
+- **Node.js** (Latest LTS recommended)
+- **npm** or **yarn**
+
+### **Installation**
+
+1. **Clone the repository**:
+
+   ```sh
+   git clone https://github.com/your-username/bingekaro-with-ai.git
+   cd bingekaro-with-ai
+
+   ```
+
+2. **Install dependencies**:
+   ```sh
+   npm install
+   ```
+
+### **Development Server**
+
+To start the development server, run:
+
+```sh
+npm run dev
+```
+
+This will launch the application at http://localhost:5173/ (default Vite port).
+
+### 🛠️ **Tech Stack**
+
+Frontend: React 18 + Vite
+AI Integration: CopilotKit (@copilotkit/react-core, @copilotkit/react-ui)
+Linting: ESLint with React and Hooks plugins
 
 Some screenshots from the project:
 ![ai-1](https://github.com/user-attachments/assets/c3fd9891-0716-41b6-b050-fa6e2ff9d9aa)
